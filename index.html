@@ -95,6 +95,7 @@ p{margin:0 0 1em}
 
 section{padding:64px 0}
 .section-head{max-width:46em;margin-bottom:32px}
+#how-it-works{border-top:1px solid var(--line)}
 .alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
 /* message band */
@@ -198,6 +199,40 @@ footer a{color:#fff}
 footer a:hover{color:#FF8A95}
 footer p{margin:0}
 
+/* real report showcase */
+.showcase{margin:36px 0 0}
+.show-main{display:grid;gap:24px;align-items:start}
+@media(min-width:900px){.show-main{grid-template-columns:1.55fr 1fr;gap:36px}}
+.browser{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.10);overflow:hidden}
+.browser-bar{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#F1EEEA;border-bottom:1px solid var(--line)}
+.browser-dots{display:flex;gap:6px;flex:none}
+.browser-dots i{width:10px;height:10px;border-radius:50%;background:#D3CEC7;display:block}
+.browser-url{flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:999px;font-size:.8rem;color:var(--muted);padding:3px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot{position:relative}
+.shot img{width:100%}
+.pin{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:.95rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px #fff,0 4px 10px rgba(0,0,0,.25)}
+@media(max-width:600px){.pin{width:24px;height:24px;font-size:.8rem}}
+.callouts{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.callouts li{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.callouts .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.callouts strong{display:block;line-height:1.3;margin-bottom:2px}
+.callouts span.d{color:var(--ink-2);font-size:.95rem}
+.show-extra{display:grid;gap:18px;margin-top:24px}
+@media(min-width:900px){.show-extra{grid-template-columns:1.15fr 1fr;align-items:start}}
+.show-extra figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.show-extra figcaption{font-size:.92rem;color:var(--muted);padding:10px 14px;border-top:1px solid var(--line)}
+.show-caption{margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.show-caption p{margin:0;color:var(--ink-2);font-size:.98rem}
+.live-link{font-weight:800}
+
+/* grow digital */
+.gd-cards .card h3{font-size:1.1rem}
+.gd-box{margin-top:22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--ink);border-radius:var(--radius);padding:24px}
+.gd-box ul{padding-left:20px;margin:0 0 1em}
+.gd-box li{margin-bottom:6px}
+.gd-note{font-size:.92rem;color:var(--muted);margin-top:18px}
+.gd-note p{margin:0 0 .5em}
+
 @media(max-width:480px){
   .brand img{width:140px}
   .header-cta{font-size:.85rem;padding:7px 12px}
@@ -298,30 +333,115 @@ footer p{margin:0}
 
 <!-- 3. WHAT YOU GET -->
 <section id="what-you-get" class="alt" aria-labelledby="get-title">
-  <div class="wrap report">
-    <div>
-      <span class="eyebrow">What you get</span>
-      <h2 id="get-title">A clear report. A fix list in the right order.</h2>
-      <p class="lead">An interactive online report you can open on your phone or laptop, with the fixes listed in order of what matters most.</p>
-      <ul class="ticks">
-        <li>Where you rank today, town by town</li>
-        <li>Who's beating you, and why</li>
-        <li>A prioritised fix list: what to do first, what can wait</li>
-        <li>Plain English. No jargon.</li>
-      </ul>
-      <p>You can fix it yourself, or ask us to. Either way, the report is yours to keep.</p>
-      <!-- SAMPLE-LINK-PENDING-PERMISSION: do not render until the business owner in the sample has approved it.
-      <p><a href="https://sdliverpool25.github.io/drumm-gbp-audit/" target="_blank" rel="noopener">See a sample report</a> (opens in a new tab)</p>
-      END SAMPLE-LINK-PENDING-PERMISSION -->
+  <div class="wrap">
+    <div class="report">
+      <div>
+        <span class="eyebrow">What you get</span>
+        <h2 id="get-title">A clear report. A fix list in the right order.</h2>
+        <p class="lead">An interactive online report you can open on your phone or laptop, with the fixes listed in order of what matters most.</p>
+      </div>
+      <div>
+        <ul class="ticks">
+          <li>Where you rank today, town by town</li>
+          <li>Who's beating you, and why</li>
+          <li>A prioritised fix list: what to do first, what can wait</li>
+          <li>Plain English. No jargon.</li>
+        </ul>
+        <p>You can fix it yourself, or ask us to. Either way, the report is yours to keep.</p>
+      </div>
     </div>
-    <div class="mock" role="img" aria-label="Illustration of a report fix list with high, medium and low priority items">
-      <div class="mock-title">Your fix list</div>
-      <div class="fix"><span class="tag tag-high">First</span><span>Set the right main category on your profile</span></div>
-      <div class="fix"><span class="tag tag-high">First</span><span>Add each service you offer, in your own words</span></div>
-      <div class="fix"><span class="tag tag-med">Next</span><span>Make your phone number match on every directory</span></div>
-      <div class="fix"><span class="tag tag-med">Next</span><span>Add a page for each town you cover</span></div>
-      <div class="fix"><span class="tag tag-low">Later</span><span>Post recent job photos every month</span></div>
-      <small>Example layout only.</small>
+
+    <div class="showcase">
+      <div class="show-main">
+        <div class="browser">
+          <div class="browser-bar" aria-hidden="true">
+            <span class="browser-dots"><i></i><i></i><i></i></span>
+            <span class="browser-url">sdliverpool25.github.io/drumm-gbp-audit/</span>
+          </div>
+          <div class="shot">
+            <img src="assets/drumm-report-hero-800.webp"
+                 srcset="assets/drumm-report-hero-800.webp 800w, assets/drumm-report-hero-1600.webp 1600w"
+                 sizes="(min-width:1100px) 620px, (min-width:900px) 58vw, calc(100vw - 40px)"
+                 width="1600" height="1781" loading="lazy" decoding="async"
+                 alt="Top of the Drumm Carpentry Google Maps audit: a list of 14 checks, each marked healthy, at risk or critical with a short finding, plus panels showing 4 of 14 checks healthy, 11 of 28 Maps searches where the business isn't in the top 20, and the top 3 priority actions.">
+            <span class="pin" style="left:9.4%;top:50%" aria-hidden="true">1</span>
+            <span class="pin" style="left:89%;top:62%" aria-hidden="true">2</span>
+            <span class="pin" style="left:89%;top:87%" aria-hidden="true">3</span>
+          </div>
+        </div>
+        <ol class="callouts" aria-label="What the report shows">
+          <li><span class="n" aria-hidden="true">1</span><div><strong>14 checks with a clear status</strong><span class="d">Healthy, at risk or critical, with what we found in a few words.</span></div></li>
+          <li><span class="n" aria-hidden="true">2</span><div><strong>Where you show up, town by town</strong><span class="d">Your Maps position for each service, searched from the towns you work in.</span></div></li>
+          <li><span class="n" aria-hidden="true">3</span><div><strong>Fixes in order, tick them off as you go</strong><span class="d">What to do first, why it matters and how long it takes.</span></div></li>
+        </ol>
+      </div>
+
+      <div class="show-extra">
+        <figure>
+          <img src="assets/drumm-report-rank-800.webp"
+               srcset="assets/drumm-report-rank-800.webp 800w, assets/drumm-report-rank-1600.webp 1600w"
+               sizes="(min-width:1100px) 560px, (min-width:900px) 52vw, calc(100vw - 40px)"
+               width="1600" height="1267" loading="lazy" decoding="async"
+               alt="Rankings section of the report: a grid of Google Maps positions for four searches (fitted kitchens, fitted wardrobes, kitchen showroom, carpenter) from seven towns, colour-coded from top 3 to not in the top 20, next to a map of the towns.">
+          <figcaption>Rankings: 4 searches from 7 towns, side by side with a map.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/drumm-report-fix-800.webp"
+               srcset="assets/drumm-report-fix-800.webp 800w, assets/drumm-report-fix-1400.webp 1400w"
+               sizes="(min-width:1100px) 480px, (min-width:900px) 45vw, calc(100vw - 40px)"
+               width="1400" height="398" loading="lazy" decoding="async"
+               alt="An opened fix card, number 1, Change your main business category: what we found, why it matters, what to do and the effort involved, with a Done tick box.">
+          <figcaption>An opened fix: what we found, why it matters, what to do.</figcaption>
+        </figure>
+      </div>
+
+      <div class="show-caption">
+        <p>A real report for Drumm Carpentry, Kitchens &amp; Wardrobes, Mallow. Shared with permission.</p>
+        <a class="live-link" href="https://sdliverpool25.github.io/drumm-gbp-audit/" target="_blank" rel="noopener">See the full live report<span class="opt"> (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3b. GROW DIGITAL -->
+<section id="grow-digital" aria-labelledby="gd-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Getting found online</span>
+      <h2 id="gd-title">A practical step on your Grow Digital journey</h2>
+      <p class="lead"><a href="https://www.growdigital.gov.ie/" target="_blank" rel="noopener">Grow Digital</a> is a free website from the Department of Enterprise, Tourism and Employment. It helps businesses see how digitally ready they are and points them to supports from their Local Enterprise Office and other agencies. A Maps check fits alongside it.</p>
+    </div>
+    <div class="grid grid-3 gd-cards">
+      <article class="card">
+        <h3>Start with their free assessment</h3>
+        <p>Grow Digital has a free 5-minute self-assessment. You get a digital scorecard with advice, recommendations and supports. Sales and marketing is one of the areas it covers.</p>
+      </article>
+      <article class="card">
+        <h3>Then see how customers find you</h3>
+        <p>Keeping up with competitors online and reaching new customers are among the goals Grow Digital talks about. A Maps check shows where you appear today, town by town, next to the businesses Google shows instead.</p>
+      </article>
+      <article class="card">
+        <h3>A baseline and a plan</h3>
+        <p>You get a clear starting point and a fix list in order, so you know what to do first and can see what has changed when you check again.</p>
+      </article>
+    </div>
+
+    <div class="gd-box">
+      <h3>About the Grow Digital Voucher</h3>
+      <p>Local Enterprise Offices run a Grow Digital Voucher. Going by the official scheme page:</p>
+      <ul>
+        <li>It's a grant of 50% of eligible costs, from &euro;500 up to &euro;5,000.</li>
+        <li>It's for small businesses with 1 to 50 paid employees that have been trading for at least 6 months, aren't Enterprise Ireland or IDA clients, and have tax clearance.</li>
+        <li>You must have completed a Local Enterprise Office <a href="https://www.localenterprise.ie/discover-business-supports/digitalisation/digital-for-business-support/" target="_blank" rel="noopener">Digital for Business</a> project in the previous two years.</li>
+        <li>It covers new, off-the-shelf software subscriptions (for one year) plus setup and training for that software.</li>
+        <li>You must apply before you spend anything or start the work.</li>
+      </ul>
+      <p>A Maps check and profile fixes aren't on the voucher's published list of eligible costs, so don't count on it to pay for our work. If you're applying for the Grow Digital Voucher, our fix plan can help you scope the work. Check the scheme rules for eligibility with your <a href="https://www.localenterprise.ie/" target="_blank" rel="noopener">Local Enterprise Office</a>.</p>
+      <p style="margin-bottom:0"><a href="https://www.localenterprise.ie/Growdigital/WHAT-IS-THE-GROW-DIGITAL-VOUCHER-/" target="_blank" rel="noopener">Read the Grow Digital Voucher rules</a> &middot; <a href="https://www.growdigital.gov.ie/" target="_blank" rel="noopener">Visit growdigital.gov.ie</a></p>
+    </div>
+    <div class="gd-note">
+      <p>Drumreach is an independent business. We're not affiliated with or endorsed by the Government of Ireland, the Department of Enterprise, Tourism and Employment, Enterprise Ireland or the Local Enterprise Offices, and we're not an approved provider for any scheme.</p>
+      <p>Scheme details are from the official pages in October 2026 and can change. Always check the current rules.</p>
     </div>
   </div>
 </section>
