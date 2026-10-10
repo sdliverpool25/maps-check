@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Google Maps Check for Irish Trades | Drumreach</title>
+<meta name="description" content="Free Google Maps visibility check for Irish home-improvement businesses. See where you rank in the map pack for your services and towns, and what to fix. Cork, Limerick and Kerry.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://sdliverpool25.github.io/maps-check/">
+<meta name="theme-color" content="#B92533">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Drumreach">
+<meta property="og:locale" content="en_IE">
+<meta property="og:title" content="Your next job starts on Google Maps. Who's getting it?">
+<meta property="og:description" content="Free Google Maps check for Irish trades. Find out where you rank for your services and towns, and what to fix first.">
+<meta property="og:url" content="https://sdliverpool25.github.io/maps-check/">
+<meta property="og:image" content="https://sdliverpool25.github.io/maps-check/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Drumreach logo: a red and black swan next to the word drumreach">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your next job starts on Google Maps. Who's getting it?">
+<meta name="twitter:description" content="Free Google Maps check for Irish trades. Find out where you rank and what to fix first.">
+<meta name="twitter:image" content="https://sdliverpool25.github.io/maps-check/assets/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Drumreach",
+  "url": "https://drumreach.com",
+  "email": "shane@drumreach.com",
+  "logo": "https://sdliverpool25.github.io/maps-check/assets/logo-600.png",
+  "image": "https://sdliverpool25.github.io/maps-check/assets/logo-600.png",
+  "areaServed": [
+    {"@type": "AdministrativeArea", "name": "County Cork"},
+    {"@type": "AdministrativeArea", "name": "County Limerick"},
+    {"@type": "AdministrativeArea", "name": "County Kerry"}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --red:#B92533; --red-dark:#931C28; --red-soft:#FBEDEE;
+  --ink:#111111; --ink-2:#3A3A3A; --muted:#5A5A5A;
+  --bg:#FAF8F5; --card:#FFFFFF; --line:#E6E1DA;
+  --radius:14px; --max:1100px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--ink);background:var(--bg)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red-dark);text-underline-offset:2px}
+a:hover{color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;padding:10px 16px;z-index:10}
+.skip:focus{left:12px;top:12px}
+h1,h2,h3{line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,6.5vw,3.5rem);font-weight:800}
+h2{font-size:clamp(1.6rem,4.2vw,2.3rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0 0 1em}
+.eyebrow{display:inline-block;font-size:.85rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--red-dark);margin-bottom:.75rem}
+.lead{font-size:clamp(1.1rem,2.4vw,1.3rem);color:var(--ink-2);max-width:40em}
+
+/* header */
+.site-header{background:#fff;border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:12px;padding-bottom:12px}
+.brand img{width:170px}
+.header-cta{font-weight:700;font-size:.95rem;text-decoration:none;color:var(--ink);border:2px solid var(--ink);padding:8px 14px;border-radius:999px;white-space:nowrap}
+.header-cta:hover{background:var(--ink);color:#fff}
+
+/* buttons */
+.btn{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:1.1rem;text-decoration:none;padding:16px 28px;border-radius:999px;border:0;cursor:pointer;font-family:inherit;line-height:1.2;transition:background .15s}
+.btn:hover{background:var(--red-dark);color:#fff}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* hero */
+.hero{background:#fff;padding:56px 0 64px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:var(--red-soft);z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero h1 span{color:var(--red)}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:28px}
+.hero-note{color:var(--muted);font-size:.98rem;margin:0}
+.hero-points{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:10px;max-width:44em}
+.hero-points li{padding-left:30px;position:relative;color:var(--ink-2)}
+.hero-points li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--red)}
+
+section{padding:64px 0}
+.section-head{max-width:46em;margin-bottom:32px}
+.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* message band */
+.band{background:var(--ink);color:#fff;padding:48px 0}
+.band p{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:600;max-width:44em;margin:0 0 .6em}
+.band p:last-child{margin:0}
+.band strong{color:#FF8A95}
+
+/* grids & cards */
+.grid{display:grid;gap:18px}
+@media(min-width:700px){.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card p:last-child{margin-bottom:0}
+.check .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--red-soft);color:var(--red-dark);font-weight:800;margin-bottom:12px}
+.card-flag{border-color:var(--red);box-shadow:inset 4px 0 0 var(--red)}
+
+/* report */
+.report{display:grid;gap:28px;align-items:center}
+@media(min-width:860px){.report{grid-template-columns:1.1fr .9fr}}
+.ticks{list-style:none;padding:0;margin:0 0 1em}
+.ticks li{padding-left:32px;position:relative;margin-bottom:10px}
+.ticks li::before{content:"";position:absolute;left:4px;top:.35em;width:8px;height:15px;border:solid var(--red);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.mock{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.mock-title{font-weight:800;margin-bottom:12px}
+.fix{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line)}
+.tag{flex:none;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:6px}
+.tag-high{background:var(--red);color:#fff}
+.tag-med{background:var(--ink);color:#fff}
+.tag-low{background:#E9E6E1;color:var(--ink)}
+.mock small{display:block;color:var(--muted);margin-top:10px}
+
+/* steps */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;position:relative;padding-left:64px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+
+/* pricing */
+.price{display:flex;flex-direction:column}
+.price .amount{font-size:2rem;font-weight:800;line-height:1.1;margin:4px 0 2px}
+.price .amount small{font-size:.95rem;font-weight:600;color:var(--muted)}
+.price .sub{color:var(--muted);font-size:.95rem;margin-bottom:14px}
+.price ul{padding-left:20px;margin:0 0 18px}
+.price ul li{margin-bottom:6px}
+.price .btn{margin-top:auto;text-align:center;font-size:1rem;padding:13px 20px}
+.btn-outline{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+.price-free{border:2px solid var(--red)}
+.fine{color:var(--muted);font-size:.95rem;margin-top:18px}
+
+/* faq */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-weight:700;padding:18px 48px 18px 20px;position:relative;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--red);font-weight:700}
+.faq details[open] summary::after{content:"\2212"}
+.faq details > div{padding:0 20px 18px;color:var(--ink-2)}
+.faq details > div p:last-child{margin:0}
+
+/* form */
+.form-wrap{display:grid;gap:28px}
+@media(min-width:900px){.form-wrap{grid-template-columns:.8fr 1.2fr;align-items:start}}
+form.card{padding:28px}
+.field{margin-bottom:18px}
+.field label,.field legend{display:block;font-weight:700;margin-bottom:6px}
+.opt{font-weight:400;color:var(--muted);font-size:.92rem}
+.req{color:var(--red-dark)}
+input[type=text],input[type=email],input[type=tel],input[type=url],textarea{width:100%;font:inherit;font-size:1rem;padding:12px 14px;border:2px solid #8A8580;border-radius:10px;background:#fff;color:var(--ink)}
+input:focus,textarea:focus{outline:3px solid var(--red);outline-offset:1px;border-color:var(--ink)}
+textarea{min-height:90px;resize:vertical}
+fieldset{border:0;padding:0;margin:0 0 18px;min-width:0}
+.radios{display:flex;flex-wrap:wrap;gap:10px}
+.radios label{display:flex;align-items:center;gap:8px;font-weight:600;border:2px solid #8A8580;border-radius:999px;padding:8px 16px;cursor:pointer;background:#fff;margin:0}
+.radios input{width:18px;height:18px;accent-color:var(--red);margin:0}
+.radios label:has(input:checked){border-color:var(--red);background:var(--red-soft)}
+.radios label:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+.consent{display:flex;gap:12px;align-items:flex-start;font-weight:400!important}
+.consent input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--red)}
+.error-msg{display:none;color:#A1121F;font-size:.92rem;font-weight:600;margin-top:6px}
+.invalid .error-msg{display:block}
+.invalid input[type=text],.invalid input[type=email],.invalid input[type=tel],.invalid input[type=url],.invalid textarea{border-color:#A1121F}
+.form-status{border-radius:12px;padding:18px 20px;margin-top:18px;display:none}
+.form-status.show{display:block}
+.form-status.info{background:var(--red-soft);border:1px solid #E7B9BE}
+.form-status.error{background:#FFF4F4;border:1px solid #A1121F}
+.form-status.ok{background:#EEF7EF;border:1px solid #2E7D32}
+.form-status p:last-child{margin-bottom:0}
+.form-status .btn{font-size:1rem;padding:12px 22px;margin-top:4px}
+.form-summary{margin-bottom:14px;color:#A1121F;font-weight:700;display:none}
+.form-summary.show{display:block}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+
+/* privacy */
+.privacy dl{margin:0}
+.privacy dt{font-weight:700;margin-top:14px}
+.privacy dd{margin:4px 0 0;color:var(--ink-2)}
+
+/* footer */
+footer{background:var(--ink);color:#EDEDED;padding:40px 0;font-size:.98rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;align-items:center}
+footer a{color:#fff}
+footer a:hover{color:#FF8A95}
+footer p{margin:0}
+
+@media(max-width:480px){
+  .brand img{width:140px}
+  .header-cta{font-size:.85rem;padding:7px 12px}
+  .hero{padding:40px 0 48px}
+  section{padding:48px 0}
+  .btn{width:100%;text-align:center}
+  .hero-cta{gap:12px}
+  form.card{padding:20px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Drumreach home">
+      <picture>
+        <source srcset="assets/logo-600.webp" type="image/webp">
+        <img src="assets/logo-600.png" width="600" height="176" alt="Drumreach">
+      </picture>
+    </a>
+    <a class="header-cta" href="#audit">Free Maps check</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1. HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <span class="eyebrow">Free Google Maps check for Irish trades</span>
+    <h1 id="hero-title">Your next job starts on Google Maps. <span>Who's getting it?</span></h1>
+    <p class="lead">When someone near you searches for a kitchen fitter, roofer or plumber, Google shows three local businesses on the map. We'll show you if you're one of them, who is, and what to fix.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#audit">Get my free Maps check</a>
+      <p class="hero-note">Free. No obligation. Your results are sent to you.</p>
+    </div>
+    <ul class="hero-points">
+      <li>For kitchen fitters, carpenters, roofers, builders, plumbers, electricians and other home-improvement trades.</li>
+      <li>Based in Munster. Cork, Limerick and Kerry.</li>
+      <li>No login needed. We only look at what your customers can see.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MESSAGE BAND -->
+<div class="band" role="region" aria-label="Why Google Maps matters">
+  <div class="wrap">
+    <p>People looking for a local trade don't start on websites. They start on Google Maps and the top 3 listings at the top of Google.</p>
+    <p>Get into that top 3 for your services and towns, and you're in front of the people ready to hire. Your website and listings are there to back that up.</p>
+    <p><strong>Paying for ads to appear where your profile could appear for free?</strong> That's money leaking out every month.</p>
+  </div>
+</div>
+
+<!-- 2. WHAT WE CHECK -->
+<section id="what-we-check" aria-labelledby="check-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">What we check</span>
+      <h2 id="check-title">Six things that decide who gets the call</h2>
+      <p class="lead">We look at your business the way Google and your customers do.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card check">
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Where you rank on the map</h3>
+        <p>Where you show up on Google Maps for your main services, searched from the towns you actually work in.</p>
+      </article>
+      <article class="card check">
+        <span class="num" aria-hidden="true">2</span>
+        <h3>You vs. the top 3</h3>
+        <p>How your profile stacks up against the three competitors Google is showing instead of you.</p>
+      </article>
+      <article class="card check">
+        <span class="num" aria-hidden="true">3</span>
+        <h3>Your profile setup</h3>
+        <p>Your Google Business Profile, line by line: category, services, photos, reviews and posts.</p>
+      </article>
+      <article class="card check">
+        <span class="num" aria-hidden="true">4</span>
+        <h3>Your name, address and phone</h3>
+        <p>Whether they match across your website and directories like Golden Pages and Houzz. Mixed details confuse Google.</p>
+      </article>
+      <article class="card check">
+        <span class="num" aria-hidden="true">5</span>
+        <h3>Your website</h3>
+        <p>Whether your site clearly backs up the services you offer and the towns you cover.</p>
+      </article>
+      <article class="card check card-flag">
+        <span class="num" aria-hidden="true">6</span>
+        <h3>Ads you might not need</h3>
+        <p>If you run Google Ads, whether you're paying for clicks where you could be showing up for free.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 3. WHAT YOU GET -->
+<section id="what-you-get" class="alt" aria-labelledby="get-title">
+  <div class="wrap report">
+    <div>
+      <span class="eyebrow">What you get</span>
+      <h2 id="get-title">A clear report. A fix list in the right order.</h2>
+      <p class="lead">An interactive online report you can open on your phone or laptop, with the fixes listed in order of what matters most.</p>
+      <ul class="ticks">
+        <li>Where you rank today, town by town</li>
+        <li>Who's beating you, and why</li>
+        <li>A prioritised fix list: what to do first, what can wait</li>
+        <li>Plain English. No jargon.</li>
+      </ul>
+      <p>You can fix it yourself, or ask us to. Either way, the report is yours to keep.</p>
+      <!-- SAMPLE-LINK-PENDING-PERMISSION: do not render until the business owner in the sample has approved it.
+      <p><a href="https://sdliverpool25.github.io/drumm-gbp-audit/" target="_blank" rel="noopener">See a sample report</a> (opens in a new tab)</p>
+      END SAMPLE-LINK-PENDING-PERMISSION -->
+    </div>
+    <div class="mock" role="img" aria-label="Illustration of a report fix list with high, medium and low priority items">
+      <div class="mock-title">Your fix list</div>
+      <div class="fix"><span class="tag tag-high">First</span><span>Set the right main category on your profile</span></div>
+      <div class="fix"><span class="tag tag-high">First</span><span>Add each service you offer, in your own words</span></div>
+      <div class="fix"><span class="tag tag-med">Next</span><span>Make your phone number match on every directory</span></div>
+      <div class="fix"><span class="tag tag-med">Next</span><span>Add a page for each town you cover</span></div>
+      <div class="fix"><span class="tag tag-low">Later</span><span>Post recent job photos every month</span></div>
+      <small>Example layout only.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 4. HOW IT WORKS -->
+<section id="how-it-works" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2 id="how-title">Three steps. Nothing to install.</h2>
+    </div>
+    <ol class="steps grid grid-3">
+      <li class="card"><h3>Tell us your business</h3><p>Your business name, your main services and the towns you work in. Two minutes.</p></li>
+      <li class="card"><h3>We check your Google presence</h3><p>Your map rankings, your profile, your competitors, your listings and your website.</p></li>
+      <li class="card"><h3>You get your report and a fix plan</h3><p>Sent to you, with the fixes in order. Happy to talk it through if you want.</p></li>
+    </ol>
+    <p style="margin-top:28px"><a class="btn" href="#audit">Get my free Maps check</a></p>
+  </div>
+</section>
+
+<!-- 5. PRICING -->
+<section id="pricing" class="alt" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2 id="pricing-title">Start free. Only pay if you want help.</h2>
+    </div>
+    <div class="grid grid-3">
+      <article class="card price price-free">
+        <h3>Free Maps check</h3>
+        <p class="amount">€0</p>
+        <p class="sub">No card. No obligation.</p>
+        <ul>
+          <li>Map rankings for your services and towns</li>
+          <li>Side-by-side with your top 3 competitors</li>
+          <li>Prioritised fix list</li>
+        </ul>
+        <a class="btn" href="#audit">Get my free Maps check</a>
+      </article>
+      <article class="card price">
+        <h3>Fix it for me</h3>
+        <p class="amount">from €295 <small>ex VAT</small></p>
+        <p class="sub">One-off</p>
+        <ul>
+          <li>We work through your fix list for you</li>
+          <li>Profile setup: category, services, photos</li>
+          <li>Name, address and phone tidied across directories</li>
+        </ul>
+        <a class="btn btn-outline" href="#audit">Start with the free check</a>
+      </article>
+      <article class="card price">
+        <h3>Keep me on top</h3>
+        <p class="amount">from €99 <small>ex VAT / month</small></p>
+        <p class="sub">Monthly</p>
+        <ul>
+          <li>Regular posts and photo updates on your profile</li>
+          <li>Ongoing checks on your map rankings</li>
+          <li>A short monthly update in plain English</li>
+        </ul>
+        <a class="btn btn-outline" href="#audit">Start with the free check</a>
+      </article>
+    </div>
+    <p class="fine">Final price depends on what your report finds. You'll get a fixed quote before any work starts.</p>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section id="faq" class="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2 id="faq-title">Straight answers</h2>
+    </div>
+    <details>
+      <summary>Is it really free?</summary>
+      <div><p>Yes. No card, no catch, no obligation. You get the report either way. If you'd like help with the fixes, we can talk about that after.</p></div>
+    </details>
+    <details>
+      <summary>Do you need my Google login?</summary>
+      <div><p>No, not for the audit. We only look at what's public, the same things your customers see. We'd only ask for access if you later want us to make changes for you.</p></div>
+    </details>
+    <details>
+      <summary>How long does it take?</summary>
+      <div><p>The form takes about two minutes. We'll confirm when to expect your report when we get your request.</p></div>
+    </details>
+    <details>
+      <summary>What areas do you cover?</summary>
+      <div><p>We're based in Munster and focus on Cork, Limerick and Kerry. If you're elsewhere in Ireland, send in a request anyway and we'll let you know.</p></div>
+    </details>
+    <details>
+      <summary>Will you guarantee I get into the top 3?</summary>
+      <div><p>No, and be wary of anyone who does. Google decides who shows up, and a big part of that is how close the business is to the person searching and how strong the local competition is. What we can do is fix everything in your control, so you're giving yourself the best chance.</p></div>
+    </details>
+    <details>
+      <summary>What happens with my details?</summary>
+      <div><p>We use them to do your audit and talk to you about it. Nothing else. We never sell your data. Read the <a href="#privacy">privacy note</a>.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- 7. AUDIT FORM -->
+<section id="audit" class="alt" aria-labelledby="audit-title">
+  <div class="wrap form-wrap">
+    <div>
+      <span class="eyebrow">Free Maps check</span>
+      <h2 id="audit-title">Find out where you stand on Google Maps</h2>
+      <p class="lead">Fill this in and we'll check your Google presence and send you the report.</p>
+      <ul class="ticks">
+        <li>Free, no obligation</li>
+        <li>No login needed</li>
+        <li>Results sent to you</li>
+      </ul>
+      <p>Prefer email? <a href="mailto:shane@drumreach.com?subject=Free%20Maps%20check%20request">shane@drumreach.com</a></p>
+    </div>
+
+    <form id="audit-form" class="card" novalidate>
+      <p class="form-summary" id="form-summary" role="alert" tabindex="-1"></p>
+      <p class="opt" style="margin-top:0">Fields marked <span class="req">*</span> are required.</p>
+
+      <div class="field">
+        <label for="business">Business name <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="business" name="business" autocomplete="organization" required aria-describedby="business-err">
+        <p class="error-msg" id="business-err">Please enter your business name.</p>
+      </div>
+      <div class="field">
+        <label for="town">Town <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="town" name="town" autocomplete="address-level2" required aria-describedby="town-err" placeholder="e.g. Mallow">
+        <p class="error-msg" id="town-err">Please enter the town you're based in.</p>
+      </div>
+      <div class="field">
+        <label for="services">Main services <span class="req" aria-hidden="true">*</span></label>
+        <textarea id="services" name="services" required aria-describedby="services-hint services-err" placeholder="e.g. fitted kitchens, wardrobes, worktops"></textarea>
+        <p class="opt" id="services-hint">The jobs you most want more of.</p>
+        <p class="error-msg" id="services-err">Please tell us your main services.</p>
+      </div>
+      <div class="field">
+        <label for="website">Website <span class="opt">(optional)</span></label>
+        <input type="text" id="website" name="website" inputmode="url" autocomplete="url" placeholder="e.g. yourbusiness.ie">
+      </div>
+      <div class="field">
+        <label for="name">Your name <span class="req" aria-hidden="true">*</span></label>
+        <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-err">
+        <p class="error-msg" id="name-err">Please enter your name.</p>
+      </div>
+      <div class="field">
+        <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-err">
+        <p class="error-msg" id="email-err">Please enter a valid email address.</p>
+      </div>
+      <div class="field">
+        <label for="phone">Phone <span class="opt">(optional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+
+      <fieldset class="field" id="ads-field" aria-describedby="ads-err">
+        <legend>Are you running Google Ads? <span class="req" aria-hidden="true">*</span></legend>
+        <div class="radios">
+          <label><input type="radio" name="ads" value="Yes" required> Yes</label>
+          <label><input type="radio" name="ads" value="No"> No</label>
+          <label><input type="radio" name="ads" value="Not sure"> Not sure</label>
+        </div>
+        <p class="error-msg" id="ads-err">Please choose one.</p>
+      </fieldset>
+
+      <div class="field" id="consent-field">
+        <label class="consent" for="consent">
+          <input type="checkbox" id="consent" name="consent" value="yes" required aria-describedby="consent-err">
+          <span>I agree Drumreach can contact me about my audit. <a href="#privacy">Privacy note</a> <span class="req" aria-hidden="true">*</span></span>
+        </label>
+        <p class="error-msg" id="consent-err">Please tick the box so we can send you your audit.</p>
+      </div>
+
+      <div class="hp" aria-hidden="true">
+        <label for="company_url">Leave this empty</label>
+        <input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button type="submit" class="btn" id="submit-btn">Get my free Maps check</button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+    </form>
+  </div>
+</section>
+
+<!-- 8. PRIVACY NOTE -->
+<section id="privacy" class="privacy" aria-labelledby="privacy-title">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Privacy note</span>
+      <h2 id="privacy-title">Your details, in plain English</h2>
+    </div>
+    <div class="card">
+      <dl>
+        <dt>What we collect</dt>
+        <dd>What you put in the form: your business name, town, services, website, your name, email, phone (if given) and whether you run Google Ads.</dd>
+        <dt>Why</dt>
+        <dd>To produce your audit and talk to you about it. That's it.</dd>
+        <dt>How long we keep it</dt>
+        <dd>If we don't end up working together, we delete your details after 90 days.</dd>
+        <dt>We never sell your data</dt>
+        <dd>Your details are not sold or passed on to anyone for marketing.</dd>
+        <dt>Want it deleted?</dt>
+        <dd>Email <a href="mailto:shane@drumreach.com?subject=Delete%20my%20details">shane@drumreach.com</a> and we'll delete it.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 9. FOOTER -->
+<footer>
+  <div class="wrap">
+    <p><strong>Drumreach</strong> &middot; Munster, Ireland</p>
+    <p><a href="mailto:shane@drumreach.com">shane@drumreach.com</a> &middot; <a href="https://drumreach.com">drumreach.com</a> &middot; <a href="#privacy">Privacy</a></p>
+    <p>&copy; <span id="year">2026</span> Drumreach</p>
+  </div>
+</footer>
+
+<script>
+/* ===================================================================
+   FORM_ENDPOINT: set this to your form handler URL (e.g. a Formspree,
+   Basin, Netlify or own endpoint that accepts a POST of form fields).
+   While it is empty, submitting shows a "requests open soon" message
+   with a prefilled email link to shane@drumreach.com.
+   =================================================================== */
+const FORM_ENDPOINT = '';
+
+(function () {
+  var CONTACT = 'shane@drumreach.com';
+  var form = document.getElementById('audit-form');
+  var statusBox = document.getElementById('form-status');
+  var summary = document.getElementById('form-summary');
+  var btn = document.getElementById('submit-btn');
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var labels = {business:'Business name', town:'Town', services:'Main services', website:'Website',
+                name:'Name', email:'Email', phone:'Phone', ads:'Running Google Ads'};
+
+  function wrapOf(el){ return el.closest('.field'); }
+  function setInvalid(el, bad){
+    var w = wrapOf(el); if (w) w.classList.toggle('invalid', bad);
+    if (el.type === 'radio') {
+      form.querySelectorAll('input[name="'+el.name+'"]').forEach(function(r){ r.setAttribute('aria-invalid', bad ? 'true':'false'); });
+    } else { el.setAttribute('aria-invalid', bad ? 'true' : 'false'); }
+  }
+  function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+
+  function validate(){
+    var firstBad = null, count = 0;
+    ['business','town','services','name','email'].forEach(function(id){
+      var el = document.getElementById(id), v = el.value.trim();
+      var bad = !v || (id === 'email' && !isEmail(v));
+      setInvalid(el, bad); if (bad){ count++; firstBad = firstBad || el; }
+    });
+    var ads = form.querySelector('input[name="ads"]:checked');
+    var adsFirst = form.querySelector('input[name="ads"]');
+    setInvalid(adsFirst, !ads); if (!ads){ count++; firstBad = firstBad || adsFirst; }
+    var consent = document.getElementById('consent');
+    setInvalid(consent, !consent.checked); if (!consent.checked){ count++; firstBad = firstBad || consent; }
+    return {ok: count === 0, first: firstBad, count: count};
+  }
+
+  // clear an error as soon as the field is fixed
+  form.addEventListener('input', function(e){
+    var w = wrapOf(e.target); if (w && w.classList.contains('invalid')) validate();
+  });
+  form.addEventListener('change', function(e){
+    var w = wrapOf(e.target); if (w && w.classList.contains('invalid')) validate();
+  });
+
+  function data(){
+    var fd = new FormData(form), out = {};
+    Object.keys(labels).forEach(function(k){ out[k] = (fd.get(k) || '').toString().trim(); });
+    return out;
+  }
+
+  function mailtoHref(d){
+    var lines = [
+      'Hi Shane,', '',
+      'I would like a free Google Maps check.', '',
+      'Business name: ' + d.business,
+      'Town: ' + d.town,
+      'Main services: ' + d.services,
+      'Website: ' + (d.website || '-'),
+      'Name: ' + d.name,
+      'Email: ' + d.email,
+      'Phone: ' + (d.phone || '-'),
+      'Running Google Ads: ' + d.ads, '',
+      'I agree Drumreach can contact me about my audit.'
+    ];
+    return 'mailto:' + CONTACT + '?subject=' + encodeURIComponent('Free Maps check request') +
+           '&body=' + encodeURIComponent(lines.join('\r\n'));
+  }
+
+  function show(kind, html){
+    statusBox.className = 'form-status show ' + kind;
+    statusBox.innerHTML = html;
+    statusBox.focus();
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (document.getElementById('company_url').value) return; // bot trap
+    var v = validate();
+    if (!v.ok){
+      summary.textContent = v.count === 1 ? 'Please fix the highlighted field.' : 'Please fix the ' + v.count + ' highlighted fields.';
+      summary.classList.add('show');
+      v.first.focus();
+      return;
+    }
+    summary.classList.remove('show'); summary.textContent = '';
+    var d = data();
+
+    if (!FORM_ENDPOINT){
+      var a = document.createElement('a'); a.href = mailtoHref(d);
+      show('info',
+        '<p><strong>Thanks, ' + escapeHtml(d.name.split(' ')[0]) + '.</strong> Online audit requests open soon.</p>' +
+        '<p>In the meantime, send your details by email. We\'ve filled it in for you, just press send.</p>' +
+        '<a class="btn" href="' + a.href.replace(/"/g,'&quot;') + '">Email my request to Shane</a>' +
+        '<p style="margin-top:12px" class="opt">Or write to <a href="mailto:' + CONTACT + '">' + CONTACT + '</a>.</p>');
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = 'Sending...';
+    fetch(FORM_ENDPOINT, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if (!r.ok) throw new Error('Bad status ' + r.status);
+        form.reset();
+        show('ok', '<p><strong>Got it, thanks.</strong> We\'ll be in touch by email about your free Maps check.</p>');
+      })
+      .catch(function(){
+        show('error', '<p><strong>Sorry, that didn\'t send.</strong> Please email your details instead.</p>' +
+          '<a class="btn" href="' + mailtoHref(d).replace(/"/g,'&quot;') + '">Email my request to Shane</a>');
+      })
+      .finally(function(){ btn.disabled = false; btn.textContent = 'Get my free Maps check'; });
+  });
+
+  function escapeHtml(s){ return s.replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+})();
+</script>
+</body>
+</html>
