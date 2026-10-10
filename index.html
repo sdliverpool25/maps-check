@@ -499,6 +499,11 @@ footer p{margin:0}
         <input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off">
       </div>
 
+      <input type="hidden" name="_cc" value="drumreach-audits@mail.grokbot.com">
+      <input type="hidden" name="_subject" value="Free Maps check request">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_honey" value="">
       <button type="submit" class="btn" id="submit-btn">Get my free Maps check</button>
       <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
     </form>
@@ -547,7 +552,7 @@ footer p{margin:0}
    While it is empty, submitting shows a "requests open soon" message
    with a prefilled email link to shane@drumreach.com.
    =================================================================== */
-const FORM_ENDPOINT = '';
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/shane@drumreach.com';
 
 (function () {
   var CONTACT = 'shane@drumreach.com';
@@ -649,6 +654,10 @@ const FORM_ENDPOINT = '';
     fetch(FORM_ENDPOINT, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
       .then(function(r){
         if (!r.ok) throw new Error('Bad status ' + r.status);
+        return r.json();
+      })
+      .then(function(j){
+        if (j && (j.success === false || j.success === 'false')) throw new Error(j.message || 'Not sent');
         form.reset();
         show('ok', '<p><strong>Got it, thanks.</strong> We\'ll be in touch by email about your free Maps check.</p>');
       })
